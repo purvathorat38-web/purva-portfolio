@@ -1,0 +1,22 @@
+Techkriti Innovation Challenge Certificate
+==========================================
+
+Participant: Purva Vikram Thorat
+Event: Techkriti'26 - Annual Technical and Entrepreneurial Festival at IIT KANPUR
+Dates: March 19-22, 2026
+Event: Techkriti Innovation Challenge
+
+This is a placeholder for the certificate PDF.
+The actual PDF should be placed at: /public/cert-techkriti-innovation.pdf
+
+Certificate Details:
+- Event: Techkriti Innovation Challenge
+- Festival: Techkriti'26 (33rd Edition)
+- Institution: IIT KANPUR
+- Dates: March 19-22, 2026
+- Status: Successfully Participated
+
+To add the PDF:
+1. Obtain the actual certificate PDF
+2. Place it in the public folder as cert-techkriti-innovation.pdf
+3. Restart the development server

@@ -1,0 +1,22 @@
+Pitch Premier Certificate
+=========================
+
+Participant: Purva Vikram Thorat
+Event: Pitch Premier at Techkriti'26
+Festival: Annual Technical and Entrepreneurial Festival of IIT KANPUR
+Dates: March 19-22, 2026 (33rd Edition)
+
+This is a placeholder for the certificate PDF.
+The actual PDF should be placed at: /public/cert-pitch-premier.pdf
+
+Certificate Details:
+- Event: Pitch Premier
+- Festival: Techkriti'26 (33rd Edition)
+- Institution: IIT KANPUR
+- Dates: March 19-22, 2026
+- Status: Successfully Participated
+
+To add the PDF:
+1. Obtain the actual certificate PDF
+2. Place it in the public folder as cert-pitch-premier.pdf
+3. Restart the development server
