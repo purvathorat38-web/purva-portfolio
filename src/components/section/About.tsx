@@ -4,8 +4,7 @@ import AsciiMorphText from '../AsciiMorphText';
 import TypewriterCarousel from '../TypewriterCarousel';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useThemeColors, withAlpha } from '../../hooks/useThemeColors';
-import { aboutMeJournalWebp400, stickers as stickerImages } from '../../assets';
-import purvaIllustration from '../../assets/purva_illustration.png';
+import { aboutMeJournalWebp400, stickers as stickerImages, purvaPhotoFrame } from '../../assets';
 
 const About = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -204,24 +203,24 @@ const About = () => {
                   loading="eager"
                 />
 
-                {/* Left page overlay — illustration */}
+                {/* Left page overlay — photo frame with girl illustration */}
                 <div
-                  className="absolute flex items-end justify-center"
+                  className="absolute flex items-center justify-center"
                   style={{
-                    top: '8%',
+                    top: '5%',
                     left: '3%',
                     width: '44%',
-                    height: '84%',
+                    height: '90%',
                   }}
                 >
                   <img
-                    src={purvaIllustration}
-                    alt="Purva — illustration of a girl with a laptop and iced coffee"
+                    src={purvaPhotoFrame}
+                    alt="Purva — photo frame with illustration of a girl drinking coffee with laptop"
                     className="w-full h-full object-contain"
                     style={{ maxHeight: '100%' }}
                     loading="eager"
                     width="400"
-                    height="400"
+                    height="500"
                   />
                 </div>
 

@@ -2,6 +2,7 @@
 import aboutMeJournalPng from './journal.PNG';
 import aboutMeJournalWebp800 from './journal.PNG';
 import aboutMeJournalWebp400 from './journal.PNG';
+import purvaPhotoFrame from './purva_photo_frame.png';
 // Add your profile images here
 // import profile1 from './profile1.jpg';
 // import profile2 from './profile2.jpg';
@@ -29,6 +30,7 @@ export const mainAssets = {
   aboutMeJournalPng,
   aboutMeJournalWebp800,
   aboutMeJournalWebp400,
+  purvaPhotoFrame,
   profile1,
   profile2,
   profile3,
@@ -43,6 +45,7 @@ export {
   aboutMeJournalPng,
   aboutMeJournalWebp800,
   aboutMeJournalWebp400,
+  purvaPhotoFrame,
   profile1,
   profile2,
   profile3,
