@@ -30,27 +30,52 @@ const Projects = () => {
 
   useEffect(() => {
     // spawn stars when component mounts or dark mode changes
-    const generatedStars = Array.from({ length: 30 }, (_, i) => {
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 15 : 30; // Reduce stars on mobile for better visibility
+    
+    const generatedStars = Array.from({ length: starCount }, (_, i) => {
       let x, y;
 
-      // Keep stars away from the title and cards area (roughly 20-80% horizontally, 15-85% vertically)
-      const zone = i % 4;
-      if (zone === 0) {
-        // top area - above the title
-        x = Math.random() * 90 + 5;
-        y = Math.random() * 10; // Only in top 10%
-      } else if (zone === 1) {
-        // bottom area - below the cards
-        x = Math.random() * 90 + 5;
-        y = Math.random() * 10 + 90; // Only in bottom 10%
-      } else if (zone === 2) {
-        // left side
-        x = Math.random() * 15; // Only in left 15%
-        y = Math.random() * 60 + 20; // Middle vertical area
+      if (isMobile) {
+        // Mobile: place stars more visible, avoiding content area
+        const zone = i % 4;
+        if (zone === 0) {
+          // top area - above the title
+          x = Math.random() * 100;
+          y = Math.random() * 8; // Only in top 8%
+        } else if (zone === 1) {
+          // bottom area - below the cards
+          x = Math.random() * 100;
+          y = Math.random() * 8 + 92; // Only in bottom 8%
+        } else if (zone === 2) {
+          // left side
+          x = Math.random() * 10; // Only in left 10%
+          y = Math.random() * 60 + 15; // Middle vertical area
+        } else {
+          // right side
+          x = Math.random() * 10 + 90; // Only in right 10%
+          y = Math.random() * 60 + 15; // Middle vertical area
+        }
       } else {
-        // right side
-        x = Math.random() * 15 + 85; // Only in right 15%
-        y = Math.random() * 60 + 20; // Middle vertical area
+        // Desktop: Keep existing layout
+        const zone = i % 4;
+        if (zone === 0) {
+          // top area - above the title
+          x = Math.random() * 90 + 5;
+          y = Math.random() * 10; // Only in top 10%
+        } else if (zone === 1) {
+          // bottom area - below the cards
+          x = Math.random() * 90 + 5;
+          y = Math.random() * 10 + 90; // Only in bottom 10%
+        } else if (zone === 2) {
+          // left side
+          x = Math.random() * 15; // Only in left 15%
+          y = Math.random() * 60 + 20; // Middle vertical area
+        } else {
+          // right side
+          x = Math.random() * 15 + 85; // Only in right 15%
+          y = Math.random() * 60 + 20; // Middle vertical area
+        }
       }
 
       return {
@@ -333,8 +358,8 @@ const Projects = () => {
           position: 'absolute',
           left: `${specialStar.x}%`,
           top: `${specialStar.y}%`,
-          width: '44px',
-          height: '44px',
+          width: window.innerWidth < 768 ? '36px' : '44px',
+          height: window.innerWidth < 768 ? '36px' : '44px',
           zIndex: 15,
           cursor: isDraggingSpecial ? 'grabbing' : 'grab',
           userSelect: 'none',
@@ -351,8 +376,8 @@ const Projects = () => {
           }}
           draggable={false}
           loading="lazy"
-          width="44"
-          height="44"
+          width={window.innerWidth < 768 ? '36' : '44'}
+          height={window.innerWidth < 768 ? '36' : '44'}
         />
       </div>
 
@@ -360,12 +385,12 @@ const Projects = () => {
       <div
         style={{
           position: 'absolute',
-          left: '85%',
-          top: '5%',
+          left: window.innerWidth < 768 ? '70%' : '85%',
+          top: window.innerWidth < 768 ? '2%' : '5%',
           zIndex: 16,
           display: 'flex',
           alignItems: 'center',
-          gap: '8px',
+          gap: '4px',
           pointerEvents: 'none'
         }}
       >
@@ -373,9 +398,9 @@ const Projects = () => {
           src={isDarkMode ? specialStars.arrowDark : specialStars.arrow}
           alt="Arrow"
           style={{
-            width: '45px',
-            height: '45px',
-            marginLeft: '40px'
+            width: window.innerWidth < 768 ? '32px' : '45px',
+            height: window.innerWidth < 768 ? '32px' : '45px',
+            marginLeft: window.innerWidth < 768 ? '15px' : '40px'
           }}
           draggable={false}
           loading="lazy"
@@ -383,11 +408,12 @@ const Projects = () => {
         <span
           style={{
             fontFamily: "'DK Crayonista', cursive",
-            fontSize: '26px',
+            fontSize: window.innerWidth < 768 ? '16px' : '26px',
             color: isDarkMode ? '#FDD5DF' : '#ec4899',
             fontWeight: 'bold',
             userSelect: 'none',
-            textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
+            textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
+            whiteSpace: 'nowrap'
           }}
         >
           drag me!
@@ -405,8 +431,8 @@ const Projects = () => {
             position: 'absolute',
             left: `${star.x}%`,
             top: `${star.y}%`,
-            width: '50px',
-            height: '50px',
+            width: window.innerWidth < 768 ? '40px' : '50px',
+            height: window.innerWidth < 768 ? '40px' : '50px',
             zIndex: 1,
             cursor: star.isDragging ? 'grabbing' : 'grab',
             userSelect: 'none'
@@ -422,8 +448,8 @@ const Projects = () => {
             }}
             draggable={false}
             loading="lazy"
-            width="50"
-            height="50"
+            width={window.innerWidth < 768 ? '40' : '50'}
+            height={window.innerWidth < 768 ? '40' : '50'}
           />
         </div>
       ))}
