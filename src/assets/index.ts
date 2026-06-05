@@ -2,11 +2,8 @@
 import aboutMeJournalPng from './journal.PNG';
 import aboutMeJournalWebp800 from './journal.PNG';
 import aboutMeJournalWebp400 from './journal.PNG';
-import purvaPhotoFrame from './purva_photo_frame.png';
+import purvaFrame from './purva_frame.png';
 // Add your profile images here
-// import profile1 from './profile1.jpg';
-// import profile2 from './profile2.jpg';
-// import profile3 from './profile3.jpg';
 const profile1 = '';
 const profile2 = '';
 const profile3 = '';
@@ -30,7 +27,7 @@ export const mainAssets = {
   aboutMeJournalPng,
   aboutMeJournalWebp800,
   aboutMeJournalWebp400,
-  purvaPhotoFrame,
+  purvaFrame,
   profile1,
   profile2,
   profile3,
@@ -45,7 +42,7 @@ export {
   aboutMeJournalPng,
   aboutMeJournalWebp800,
   aboutMeJournalWebp400,
-  purvaPhotoFrame,
+  purvaFrame,
   profile1,
   profile2,
   profile3,
